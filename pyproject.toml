@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mp2torch"
+description = "Pytorch implementation of mediapipe that enables batch processing on GPU"
+authors = [
+    { name = "yuta0306", email = "yuta.20010306@gmail.com" }
+]
+dependencies = [
+    "mediapipe >= 0.10.8",
+    "torch >= 2.1.1",
+    "tflite >= 2.10.0",
+    "safetensors >= 0.4.1",
+    "tensorflow >= 2.13.1",
+    "tf2onnx @ git+https://github.com/onnx/tensorflow-onnx.git",
+    "onnx2torch @ git+https://github.com/ENOT-AutoDL/onnx2torch.git",
+    "einops >= 0.7.0",
+    "tqdm >= 4.66.1",
+    "ffmpegcv >= 0.3.9"
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+dynamic=["version"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "mypy",
+    "black",
+    "isort",
+    "pynvim"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "mp2torch._version.version"}
+
+[tool.setuptools_scm]
+write_to = "src/mp2torch/_version.py"
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
+

@@ -1,0 +1,19 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# venv
+.venv
+/models/
+/images/test/
+/videos/
+/**/.DS_Store
+/**/*.log
+/data/
+/images/
+/video/
+/src/mp2torch/_version.py
